@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Actserv" table="actserv">
+    <indexes>
+      <index name="FKActServ970353" columns="Actividadesid"/>
+      <index name="FKActServ91606" columns="Servicioid"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="id" columns="id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="actividadesid" target-entity="Actividades">
+      <join-columns>
+        <join-column name="Actividadesid" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="servicioid" target-entity="Servicio">
+      <join-columns>
+        <join-column name="Servicioid" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

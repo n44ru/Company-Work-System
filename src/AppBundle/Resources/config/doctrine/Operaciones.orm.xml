@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Operaciones" table="operaciones">
+    <indexes>
+      <index name="FKOperacione845807" columns="Proyectoid"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="id" columns="id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fecha" type="string" column="Fecha" length="255" nullable="true"/>
+    <field name="nombre" type="string" column="Nombre" length="255" nullable="true"/>
+    <field name="despacho" type="string" column="Despacho" length="255" nullable="true"/>
+    <field name="nombresolicita" type="string" column="nombresolicita" length="255" nullable="true"/>
+    <field name="cargosolicita" type="string" column="cargosolicita" length="255" nullable="true"/>
+    <field name="presenciapais" type="string" column="presenciapais" length="255" nullable="true"/>
+    <field name="descripcion" type="string" column="descripcion" length="255" nullable="true"/>
+    <field name="montoestimado" type="string" column="montoestimado" length="255" nullable="true"/>
+    <field name="tecnologias" type="string" column="tecnologias" length="255" nullable="true"/>
+    <field name="experiencias" type="string" column="experiencias" length="255" nullable="true"/>
+    <field name="notas" type="string" column="notas" length="255" nullable="true"/>
+    <field name="fichero" type="string" column="fichero" length="255" nullable="true"/>
+    <field name="estado" type="string" column="estado" length="255" nullable="true"/>
+    <field name="tiempo" type="string" column="tiempo" length="255" nullable="true"/>
+    <field name="organorelacion" type="string" column="organorelacion" length="255" nullable="true"/>
+    <field name="fechacomienzo" type="string" column="fechacomienzo" length="255" nullable="true"/>
+    <field name="fechafin" type="string" column="fechafin" length="255" nullable="true"/>
+    <field name="ficheros2" type="string" column="ficheros2" length="255" nullable="true"/>
+    <field name="ficheros3" type="string" column="ficheros3" length="255" nullable="true"/>
+    <field name="ficheros4" type="string" column="ficheros4" length="255" nullable="true"/>
+    <many-to-one field="proyectoid" target-entity="Proyecto">
+      <join-columns>
+        <join-column name="Proyectoid" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

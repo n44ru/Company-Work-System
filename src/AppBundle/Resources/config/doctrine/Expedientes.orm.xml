@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Expedientes" table="expedientes">
+    <indexes>
+      <index name="FKExpediente879605" columns="Proyectoid"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="id" columns="id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="procedimiento" type="string" column="procedimiento" length="255" nullable="true"/>
+    <field name="actuacion" type="string" column="actuacion" length="255" nullable="true"/>
+    <field name="estado" type="string" column="estado" length="255" nullable="true"/>
+    <field name="tiempo" type="string" column="tiempo" length="255" nullable="true"/>
+    <field name="tareas" type="string" column="tareas" length="255" nullable="true"/>
+    <field name="organorelacion" type="string" column="organorelacion" length="255" nullable="true"/>
+    <field name="fechacomienzo" type="string" column="fechacomienzo" length="255" nullable="true"/>
+    <field name="fechafin" type="string" column="fechafin" length="255" nullable="true"/>
+    <field name="notas" type="string" column="notas" length="255" nullable="true"/>
+    <field name="fichero" type="string" column="fichero" length="255" nullable="true"/>
+    <many-to-one field="proyectoid" target-entity="Proyecto">
+      <join-columns>
+        <join-column name="Proyectoid" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

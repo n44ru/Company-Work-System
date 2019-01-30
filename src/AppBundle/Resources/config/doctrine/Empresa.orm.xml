@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Empresa" table="empresa">
+    <unique-constraints>
+      <unique-constraint name="id" columns="id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombre" type="string" column="nombre" length="255" nullable="true"/>
+    <field name="cif" type="string" column="cif" length="255" nullable="true"/>
+    <field name="direccion" type="string" column="direccion" length="255" nullable="true"/>
+    <field name="pais" type="string" column="pais" length="255" nullable="true"/>
+    <field name="cuidad" type="string" column="cuidad" length="255" nullable="true"/>
+    <field name="banco" type="string" column="banco" length="255" nullable="true"/>
+    <field name="swift" type="string" column="swift" length="255" nullable="true"/>
+    <field name="iban" type="string" column="iban" length="255" nullable="true"/>
+    <field name="cuenta" type="string" column="cuenta" length="255" nullable="true"/>
+    <field name="notas" type="string" column="notas" length="500" nullable="true"/>
+    <field name="fichero" type="string" column="fichero" length="255" nullable="true"/>
+  </entity>
+</doctrine-mapping>

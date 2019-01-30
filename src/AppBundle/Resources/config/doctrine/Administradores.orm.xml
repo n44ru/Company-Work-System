@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Administradores" table="administradores">
+    <indexes>
+      <index name="FKAdministra132750" columns="Personaid"/>
+      <index name="FKAdministra602794" columns="Empresaid"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="id" columns="id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombre" type="string" column="nombre" length="255" nullable="true"/>
+    <field name="tipo" type="string" column="tipo" length="255" nullable="true"/>
+    <field name="fechanomb" type="string" column="fechanomb" length="255" nullable="true"/>
+    <field name="fechacese" type="string" column="fechacese" length="255" nullable="true"/>
+    <field name="notas" type="string" column="notas" length="255" nullable="true"/>
+    <field name="fichero" type="integer" column="fichero" nullable="true"/>
+    <many-to-one field="empresaid" target-entity="Empresa">
+      <join-columns>
+        <join-column name="Empresaid" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="personaid" target-entity="Persona">
+      <join-columns>
+        <join-column name="Personaid" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

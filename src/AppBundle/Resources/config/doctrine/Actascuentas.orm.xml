@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Actascuentas" table="actascuentas">
+    <indexes>
+      <index name="FKActasCuent625485" columns="Personaid"/>
+      <index name="FKActasCuent95530" columns="Empresaid"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="id" columns="id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="notas" type="string" column="notas" length="255" nullable="true"/>
+    <field name="nombre" type="string" column="nombre" length="255" nullable="true"/>
+    <field name="fichero" type="string" column="fichero" length="255" nullable="true"/>
+    <many-to-one field="empresaid" target-entity="Empresa">
+      <join-columns>
+        <join-column name="Empresaid" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="personaid" target-entity="Persona">
+      <join-columns>
+        <join-column name="Personaid" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

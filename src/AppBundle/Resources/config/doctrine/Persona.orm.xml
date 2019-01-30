@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Persona" table="persona">
+    <unique-constraints>
+      <unique-constraint name="id" columns="id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombreRazonsocial" type="string" column="nombre_razonsocial" length="255" nullable="true"/>
+    <field name="identificacionFisica" type="string" column="identificacion_fisica" length="255" nullable="true"/>
+    <field name="objetosocial" type="string" column="objetosocial" length="255" nullable="true"/>
+    <field name="grupo" type="string" column="grupo" length="255" nullable="true"/>
+    <field name="direccion" type="string" column="direccion" length="255" nullable="true"/>
+    <field name="ciudad" type="string" column="ciudad" length="255" nullable="true"/>
+    <field name="pais" type="string" column="pais" length="255" nullable="true"/>
+    <field name="web" type="string" column="web" length="255" nullable="true"/>
+    <field name="descripcion" type="string" column="descripcion" length="255" nullable="true"/>
+    <field name="email" type="string" column="email" length="255" nullable="true"/>
+    <field name="actividad" type="string" column="actividad" length="255" nullable="true"/>
+    <field name="presidente" type="string" column="presidente" length="255" nullable="true"/>
+    <field name="telefono" type="integer" column="telefono" nullable="true"/>
+    <field name="notas" type="string" column="notas" length="500" nullable="true"/>
+    <field name="fichero" type="string" column="fichero" length="255" nullable="true"/>
+  </entity>
+</doctrine-mapping>
